@@ -1,0 +1,287 @@
+html, body {
+    background-size: cover;
+    color: #ffffff;
+
+    /*height: 100%;*/ /*now its without cursor going down*/
+
+    font-size: 16px;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Helvetica Neue' , Helvetica, Arial, sans-serif;
+
+
+}
+html {
+    font-family: sans-serif;
+    display: block;
+}
+body{
+    margin: 0;
+    background-attachment: fixed;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+
+
+
+
+div {
+    display: block;
+}
+
+input {
+    line-height: normal;
+    font: inherit;
+    margin: 0;
+    color: inherit;
+}
+
+input[type=checkbox] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+html input[type=button] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+a {
+    background-color: transparent;
+
+    text-decoration: none;
+    color: #0080ff;
+}
+
+button {
+    -webkit-appearance: button;
+
+    text-transform: none;
+
+    overflow: visible;
+
+    font: inherit;
+}
+
+
+
+
+
+
+.login-body {
+    /*margin: 0 auto -236px;*/
+    margin-top: 75px;
+    /*margin-left: 30px;*/
+
+    min-height: 100%;
+    background-color: transparent;
+    max-width: 450px;
+
+    color: #333;
+    padding: 0 4%;
+}
+
+
+.login-form {
+    margin-bottom: 10px;
+}
+
+.login-content {
+    min-width: 380px;
+    padding: 40px;
+    /*background-color: #f3f3f3;*/
+    background-color: rgba(0,30,36,0.4);
+}
+
+
+.login-input {
+    padding-bottom: 16px;
+}
+
+.ui-input-label.login-input-password {
+    padding-bottom: 32px;
+}
+
+.ui-label {
+    position: relative;
+
+    margin-bottom: 6px;
+
+    font-size: 1em;
+    font-weight: 400;
+    color: black;
+    display: block;
+}
+.ui-label-text {
+    color: #fff;
+}
+
+
+.login-input>.ui-text-input {
+    width: 100%;
+    max-width: 100%;
+}
+
+.ui-text-input {
+    box-sizing: border-box;
+    font-size: 16px;
+    border: solid 1px #b3b3b3;
+    border-radius: 2px;
+    display: block;
+    -webkit-appearance: none;
+    padding: 10px 11px;
+    height: 44px;
+
+    background-color: #f3f3f3;
+}
+
+
+
+
+.password-wrapper {
+    position: relative;
+}
+.hybrid-password {
+    padding-bottom: 43px;
+}
+
+
+.no-toggle {
+    visibility: hidden;
+}
+
+.no-toggle, .show-toggle {
+    position: absolute;
+    border: 0;
+    background: 0 0;
+    font-size: .875em;
+    right: 0;
+    top: 2px;
+    padding: 0;
+    z-index: 40;
+    color: #0080ff;
+}
+
+
+.hybrid-password {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.login-forgot-password-wrapper {
+    margin-top: 30px;
+    text-align: left;
+
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.login-help-link {
+    color: #ffffff;
+}
+
+.mesaj-left {
+    margin-left: 53px;
+}
+
+/*BUTON IN JOS*/
+.login-button.btn {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 16px;
+    font-size: 18px;
+
+    /*background: rgb(0,15,45);*/
+    background: #182b40;
+    /*background: #1d1d22;*/
+}
+
+.btn.btn-small {
+    display: inline-block;
+    min-width: 98px;
+    min-height: 37px;
+    /*margin-right: .5em;*/
+    line-height: 1em;
+
+    margin: .5em auto;
+}
+
+.btn {
+    position: relative;
+
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    font-family: Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: .1px;
+    border-radius: 2px;
+    user-select: none;
+    text-align: center;
+    box-sizing: border-box;
+    border: 0;
+}
+
+
+.btn.btn-submit {
+    color: #fff;
+    box-shadow: 0 1px 0 rgba(0,0,0,.55);
+}
+
+
+.ui-binary-input {
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 36px;
+    user-select: none;
+    font-size: 16px;
+}
+
+.ui-binary-input input[type=checkbox] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.login-remember-me {
+    display: inline-block;
+    margin-bottom: -5px;
+}
+
+.login-remember-me input {
+    margin-right: 10px;
+}
+
+
+.ui-binary-input input[type=checkbox]+label {
+    color: #333333;
+    position: relative;
+    display: block;
+    line-height: 1.2;
+    padding: 6px 0;
+}
+
+
+.login-remember-me-label-text {
+    font-size: 14px;
+}
+
+
+.ui-binary-input .helper {
+    font-size: 14px;
+    line-height: 1.3em;
+    color: grey;
+}
+
+
+.error {
+    color: #e50914;
+    font-family: 'Helvetica Neue' , Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}

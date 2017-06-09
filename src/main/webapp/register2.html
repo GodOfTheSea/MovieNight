@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Myproject</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body background="images/Suits.jpg">
+
+<div class="positie">
+    <div class="BFP">
+        <!--<h1 class="Contact1">Preferate</h1>-->
+        <p class="p1"> Enter your personal data:</p>
+        <hr class="forma-group2">
+        <form name="p" method="post" action="/Consoletest"  class="Forma">
+            <div class="forma-group">
+                <div>
+                    <input name="firstname"  placeholder="FIRST NAME" class="forma-control" type="text" required value>
+                </div>
+            </div>
+            <div class="forma-group">
+                <div>
+                    <input name="lastname"  placeholder="LAST NAME" class="forma-control" type="text" required value>
+                </div>
+            </div>
+            <div class="forma-group">
+                <div>
+                    <!--<input name="gender" id="gender" placeholder="GENDER" class="forma-control" type="text" value>-->
+                    <select name="gender"  class="forma-control2" required>
+                        <option value="gender"> GENDER </option>
+                        <option value="Male"> Male </option>
+                        <option value="Female"> Female </option>
+                    </select>
+                </div>
+            </div>
+            <div class="forma-group">
+                <div>
+                    <input name="dateofbirth"  placeholder="Date of Birth: (e.g 2017-02-19)" class="forma-control" type="text" required value>
+                </div>
+            </div>
+            <div class="forma-group">
+                <div>
+                    <input name="phone"  placeholder="PHONE NUMBER" class="forma-control" type="text" required value>
+                </div>
+            </div>
+            <div class="forma-group">
+                <div>
+                    <input name="email"  placeholder="EMAIL" class="forma-control" type="text" required value>
+                </div>
+            </div>
+            <div class="forma-group">
+                <div class="forma-button2">
+                    <button type="submit" name="submit" class="button" value>
+                        Register
+                    </button>
+                </div>
+            </div>
+        </form>
+        <hr class="forma-group3">
+    </div>
+</div>
+
+<audio autoplay="autoplay" controls="controls" onvolumechange=""   hidden aria-hidden="true" >
+    <source src="audio/Game%20of%20Thrones-%20Season%206%20OST%20-%20The%20Winds%20of%20Winter%20(EP%2010%20Final%20scene).mp3">
+</audio>
+
+
+</body>
+</html>

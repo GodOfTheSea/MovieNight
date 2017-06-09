@@ -1,0 +1,203 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    /*background: url("/images/Frontpagebackground.png");*/
+    background-size: cover;
+    /*background-attachment: fixed;*/
+
+}
+
+html {
+    margin: 0;
+}
+
+img {
+    width: 1366px;
+    height: 658px;
+}
+
+
+
+.button {
+    border: 1px solid gray;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1.42857143;
+    font-size: 19px;
+    padding: 6px 12px;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-color: rgba(0,0,45,0.9);
+    color: ghostwhite;
+    font-family: Georgia, serif;
+    font-style: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.button:active {
+    background-image: none;
+
+    outline: 0;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+
+    color: ghostwhite;
+    background-color: rgb(0,0,45);
+    /*border-color: rgba(102,175,233,0.6);*/
+}
+.button:focus {
+    color: ghostwhite;
+    background-color: rgb(0,0,45);
+    /*border-color: rgba(102,175,233,0.6);*/
+
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+
+    text-decoration: none;
+}
+.button:hover {
+    color: ghostwhite;
+    background-color: rgb(0,0,45);
+    border: 1px solid gray;
+
+    text-decoration: none;
+}
+
+
+
+
+.forma-button {
+    position: relative;
+    padding-left: 630px;
+    padding-top: 160px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.forma-button2 {
+    position: relative;
+    padding-left: 0;
+    padding-top: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    width: 30px;
+}
+
+
+/*div.forma-button2 {*/
+    /*width: 50px;*/
+/*}*/
+
+/*.button3 {*/
+    /*padding-left: 10px;*/
+/*}*/
+.positie-mesaj {
+    margin-top: 291px;
+    margin-left: 363px;
+}
+.mesaj {
+    padding: 10px;
+}
+.welcome {
+    background-color: rgba(0,15,45,0.1);
+    /*border: 1px solid #ffffff;*/
+    /*box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);*/
+
+    color: #ffffff;
+
+    font-family: Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 54px;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.welcome:hover {
+    text-decoration: none;
+    background-color: rgba(0,15,45,0.8);
+    border: 1px solid #ffffff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.welcome:focus {
+    text-decoration: none;
+    background-color: rgba(0,15,45,0.8);
+    border: 1px solid #ffffff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+
+.positie {
+    margin-top: 1px;
+}
+
+div.BFP{
+    margin-bottom: 100px;
+    height: 500px;
+}
+
+
+
+.Contact1 {
+    padding-left: 280px;
+    color: black;
+}
+
+.p1 {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    padding-left: 800px;
+    color: rgb(0,0,45);
+
+}
+
+.forma-group {
+    margin-bottom: 10px;
+}
+
+.Forma {
+    margin-top: 0;
+    margin-left: 800px;
+}
+
+
+.forma-group3 {
+    color: rgb(0,0,45);
+    margin: 15px 100px 15px 750px;
+}
+
+.forma-group2 {
+    margin: 15px 100px 15px 750px;
+    color: rgb(0,0,45);
+}
+
+
+.forma-control {
+    display: block;
+    width: 70%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.forma-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 0 8px rgba(102,175,233,0.6);
+}
+
+
+.forma-control2 {
+    display: block;
+    width: 74.5%;
+    height: 48px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+

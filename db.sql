@@ -1,0 +1,1 @@
+﻿update persoane set password='din1948' where email='pintea.cristi94@gmail.com';
