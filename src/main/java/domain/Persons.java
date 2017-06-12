@@ -38,34 +38,34 @@ public class Persons {
 
         //GETTERS
         public String getFirstName(){
-            return firstName;
+            return this.firstName;
         }
 
         public String getLastName() {
-            return lastName;
+            return this.lastName;
         }
 
 
 
         public String getGender(){
-            return gender;
+            return this.gender;
         }
         public String getEmail(){
-            return email;
+            return this.email;
         }
         public String getDatan(){
-            return datan;
+            return this.datan;
         }
 
         public String getPhone() {
-            return phone;
+            return this.phone;
         }
 
         public long getId (){
-            return id;
+            return this.id;
         }
         public String getPassword(){
-            return password;
+            return this.password;
         }
 
 
@@ -100,7 +100,8 @@ public class Persons {
 
         @Override
         public String toString(){
-            return " Prenume: "+firstName+"  Nume: "+lastName+"  Gender: "+gender+"  Date of birth: "+datan+"  Phone number: "+phone+"  Email: "+email;
+            return " Prenume: "+firstName+"  Nume: "+lastName+"  Gender: "+gender+"  Date of birth: "+datan+"  Phone number: "+phone+"  Email: "+email+
+                    "Password: "+ password;
         }
 
 

@@ -7,8 +7,11 @@ public class MyExceptions extends Throwable {
 
     //CONSTRUCTOR
     public MyExceptions(){
-
     }
+    public MyExceptions(String text){
+        this.error = text;
+    }
+
 
 
     public String getError(){

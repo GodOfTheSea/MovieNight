@@ -37,6 +37,7 @@ public class PersonsList extends HttpServlet {
             out.println("<th>Datan</th>");
             out.println("<th>Phone</th>");
             out.println("<th>Email</th>");
+            out.println("<th>Password</th>");
             out.println("</tr>");
             List<Persons> personEntries = PersonsRepository.read();
             for (Persons person : personEntries) {
@@ -48,7 +49,7 @@ public class PersonsList extends HttpServlet {
                 out.println("<td>"+person.getDatan()+"</td>");
                 out.println("<td>"+person.getPhone()+"</td>");
                 out.println("<td>"+person.getEmail()+"</td>");
-//                out.println("<td>"+person.getPassword()+"</td>");
+                out.println("<td>"+person.getPassword()+"</td>");
                 out.println("</tr>");
             }
             out.println("</table>");

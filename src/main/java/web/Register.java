@@ -53,7 +53,7 @@ public class Register extends  HttpServlet {
             print.println("<div class='error'><b>Problems!<b></div>");
         }
 
-        resp.sendRedirect("login.html");
+        resp.sendRedirect("login.jsp");
 
         print.close();
     }
