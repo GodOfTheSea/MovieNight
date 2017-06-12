@@ -15,10 +15,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.List;
 
 
-@WebServlet("/Consoletest")
-public class Consoletest extends  HttpServlet {
+@WebServlet("/Register")
+public class Register extends  HttpServlet {
 
     @Override
     protected void doPost (HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,14 +34,10 @@ public class Consoletest extends  HttpServlet {
         String phone = request.getParameter("email");
         String password = request.getParameter("password");
 
-
-
-
         String dateofbirth = day+"-"+month+"-"+year;
 
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter print = resp.getWriter();
-
 
         try {
             Persons entry = new Persons(firstname, lastname, gender, dateofbirth, phone, email, password);
@@ -56,11 +53,11 @@ public class Consoletest extends  HttpServlet {
             print.println("<div class='error'><b>Problems!<b></div>");
         }
 
-
-        resp.sendRedirect("login.jsp");
+        resp.sendRedirect("login.html");
 
         print.close();
     }
+
 
     @Override
     public void init() throws ServletException {

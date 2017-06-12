@@ -15,11 +15,11 @@ public class Movies {
     private int Seasons;
     private int Episodes;
     private int Note;
-    private int Favorit;
+    private int Favorite;
     private long id;
 
     //CONSTRUCTOR
-    public Movies(String type, String name, String genre, String ldate, String wdate, String duration, String storyline, String stars, String director, int seasons, int episodes, int note, int favorit){
+    public Movies(String type, String name, String genre, String ldate, String wdate, String duration, String storyline, String stars, String director, int seasons, int episodes, int note, int favorite){
         this.Type=type;
         this.Name=name;
         this.Genre=genre;
@@ -32,7 +32,7 @@ public class Movies {
         this.Seasons=seasons;
         this.Episodes=episodes;
         this.Note=note;
-        this.Favorit=favorit;
+        this.Favorite = favorite;
     }
 
 
@@ -121,11 +121,11 @@ public class Movies {
         this.Note=note;
     }
 
-    public int getFavorit(){
-        return this.Favorit;
+    public int getFavorite(){
+        return this.Favorite;
     }
-    public void setFavorit (int favorit){
-        this.Favorit=favorit;
+    public void setFavorite(int favorite){
+        this.Favorite = favorite;
     }
 
     public long getId(){
@@ -137,7 +137,7 @@ public class Movies {
 
     @Override
     public String toString(){
-        return Type + Name + Genre + Ldate + Wdate + Duration + Storyline + Stars + Director + Seasons + Episodes + Note + Favorit;
+        return Type + Name + Genre + Ldate + Wdate + Duration + Storyline + Stars + Director + Seasons + Episodes + Note + Favorite;
     }
 }
 

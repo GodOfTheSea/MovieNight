@@ -69,16 +69,6 @@ public class PersonsRepository {
     }
 
 
-
-
-
-
-
-
-
-
-
-
     public static Boolean readEmail(String email) throws ClassNotFoundException, SQLException {
 
         // 1. load the driver
@@ -137,15 +127,6 @@ public class PersonsRepository {
     }
 
 
-
-
-
-
-
-
-
-
-
     public static List<Persons> read() throws ClassNotFoundException, SQLException {
         // 1. load the driver
         Class.forName("org.postgresql.Driver");
@@ -157,12 +138,18 @@ public class PersonsRepository {
         Statement st = conn.createStatement();
 
         // 4. execute a query
-        ResultSet rs = st.executeQuery("SELECT Email, Password FROM persoane");
+        ResultSet rs = st.executeQuery("SELECT id,FirstName, LastName, Gender, DateOfBirth, Phone, Email, Password FROM persoane");
+
 
         // 5. iterate the result set and print the values
         List<Persons> PersonEntries = new ArrayList<>();
         while (rs.next()) {
             Persons person = new Persons(
+                    rs.getString("firstName"),
+                    rs.getString("lastName"),
+                    rs.getString("gender"),
+                    rs.getString("DateOfBirth"),
+                    rs.getString("phone"),
                     rs.getString("email"),
                     rs.getString("password")
             );
@@ -226,12 +213,6 @@ public class PersonsRepository {
         }
         return false;
     }
-
-
-
-
-
-
 
 
     public static long findPerson(List<Persons> PersonEntries, String email) throws ClassNotFoundException, SQLException {

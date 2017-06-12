@@ -35,7 +35,7 @@ public class MoviesRepository {
         preparedStatement.setInt(10, entry.getSeasons());
         preparedStatement.setInt(11,entry.getEpisodes());
         preparedStatement.setInt(12, entry.getNote());
-        preparedStatement.setInt(13, entry.getFavorit());
+        preparedStatement.setInt(13, entry.getFavorite());
         //4.Execute a prepared statement
         int rowsInserted = preparedStatement.executeUpdate();
         System.out.println("Inserted "+rowsInserted+" rows.");
