@@ -94,7 +94,12 @@
                 </label>
                 <input type="button" class="show-toggle no-toggle" value>
             </div>
-
+            <div style="color: #dddddd">
+                <%  String message =  String.valueOf(request.getAttribute("message"));
+                    if (message.equals("null")) message = "";
+                %>
+                <%=message%>
+            </div>
 
 
             <!--<div class="login-forgot-password-wrapper">-->

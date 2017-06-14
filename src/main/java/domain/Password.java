@@ -1,8 +1,5 @@
 //package domain;
 //
-///**
-// * Created by pinte on 5/22/2017.
-// */
 //public class Password  {
 //
 //    private String password;

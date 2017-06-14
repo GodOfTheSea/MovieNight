@@ -1,4 +1,4 @@
-package web;
+package web.loginWithFilter;
 
 import db.PersonsRepository;
 import domain.Persons;
@@ -6,18 +6,14 @@ import domain.Persons;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.List;
-
-/**
- * Need to find a way to remember(by ID) when you are logged in
- */
-
 
 @WebServlet("/Login")
 public class Login extends HttpServlet {
@@ -30,17 +26,14 @@ public class Login extends HttpServlet {
 
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter print = resp.getWriter();
+//        request.getRequestDispatcher("login.jsp").include(request, resp);
 
         try {
-            String message = verifyPerson(email,pass);
-            if (message.equals("User found")){
-                resp.sendRedirect("home.html");
-            }
-            else {
-                request.setAttribute("message", message);
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
-                dispatcher.forward(request, resp);
-            }
+            Persons p = PersonsRepository.findPersonByEmailAndPassword(PersonsRepository.read(),email,pass);
+            HttpSession session=request.getSession();
+            session.setAttribute("name",p);
+            resp.sendRedirect("home.html");
+            System.out.println("Online is: " + p.toString());
 
         } catch (ClassNotFoundException e) {
             print.println("<div class='error'><b>Unable initialize database connection<b></div>");
@@ -54,32 +47,9 @@ public class Login extends HttpServlet {
 
         print.close();
 
-    }
 
-    private static String verifyPerson(String email, String pass) throws ClassNotFoundException, SQLException {
-        if (email.isEmpty()){
-            return "Please enter your email!";
-        } else if (pass.isEmpty()){
-            return "Please enter your password!";
-        }
-        List<Persons> personsEntries = PersonsRepository.read();
-        if (!PersonsRepository.findPersonByEmailAndPassword(personsEntries,email,pass)) {
-            return "Invalid user or password!";
-        }
-        return "User found";
 
     }
 
 
-    @Override
-    public void init() throws ServletException {
-        super.init();
-        getServletContext().log("init() called");
-    }
-
-    @Override
-    public void destroy(){
-        System.out.println("Destroying Servlet!");
-        super.destroy();
-    }
 }

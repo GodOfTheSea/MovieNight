@@ -43,4 +43,23 @@ CREATE TABLE Persoane (
   Password character (100)
 );
 
-INSERT INTO Persoane (FirstName, LastName, Gender, DateofBirth, Phone, Email, Password) VALUES ('Cristian', 'Pintea', 'Male', '1994-10-22', '0756608975', 'pintea.cristi94@gmail.com', 'dinamo1948');
+INSERT INTO Persoane (FirstName, LastName, Gender, DateofBirth, Phone, Email, Password) VALUES
+ ('Andreas', 'Caro', 'Male', '1992-12-20', '0722391912', 'admin@mail.com', 'pass');
+INSERT INTO Persoane (FirstName, LastName, Gender, DateofBirth, Phone, Email, Password) VALUES
+ ('Andreas', 'Caro', 'Male', '1992-12-20', '0722391912', 'admin@mail.com', 'pass');
+INSERT INTO Persoane (FirstName, LastName, Gender, DateofBirth, Phone, Email, Password) VALUES
+ ('Andreas', 'Caro', 'Male', '1992-12-20', '0722391912', 'admin@mail.com', 'pass');
+INSERT INTO Persoane (FirstName, LastName, Gender, DateofBirth, Phone, Email, Password) VALUES
+ ('Andreas', 'Caro', 'Male', '1992-12-20', '0722391912', 'admin@mail.com', 'pass');
+INSERT INTO Persoane (FirstName, LastName, Gender, DateofBirth, Phone, Email, Password) VALUES
+ ('Andreas', 'Caro', 'Male', '1992-12-20', '0722391912', 'admin@mail.com', 'pass');
+INSERT INTO Persoane (FirstName, LastName, Gender, DateofBirth, Phone, Email, Password) VALUES
+ ('Andreas', 'Caro', 'Male', '1992-12-20', '0722391912', 'admin@mail.com', 'pass');
+INSERT INTO Persoane (FirstName, LastName, Gender, DateofBirth, Phone, Email, Password) VALUES
+ ('Andreas', 'Caro', 'Male', '1992-12-20', '0722391912', 'admin@mail.com', 'pass');
+INSERT INTO Persoane (FirstName, LastName, Gender, DateofBirth, Phone, Email, Password) VALUES
+ ('Andreas', 'Caro', 'Male', '1992-12-20', '0722391912', 'admin@mail.com', 'pass');
+INSERT INTO Persoane (FirstName, LastName, Gender, DateofBirth, Phone, Email, Password) VALUES
+ ('Andreas', 'Caro', 'Male', '1992-12-20', '0722391912', 'admin@mail.com', 'pass');
+INSERT INTO Persoane (FirstName, LastName, Gender, DateofBirth, Phone, Email, Password) VALUES
+ ('Andreas', 'Caro', 'Male', '1992-12-20', '0722391912', 'admin@mail.com', 'pass');

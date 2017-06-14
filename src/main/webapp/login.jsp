@@ -24,15 +24,15 @@
                 </label>
                 <input type="button" class="show-toggle no-toggle" value>
             </div>
-
+            <div style="color: #dddddd">
             <%  String message =  String.valueOf(request.getAttribute("message"));
                 if (message.equals("null")) message = "";
             %>
             <%=message%>
-
+            </div>
             <div class="login-forgot-password-wrapper">
-                <a href="passwordremainder.html" class="login-help-link" tabindex="3">Forgot your email or password?</a>
-                <a href="register.html" class="login-help-link mesaj-left"> Create an account!</a>
+                <a href="passwordReminder.html" class="login-help-link" tabindex="3">Forgot your email or password?</a>
+                <a href="register.jsp" class="login-help-link mesaj-left"> Create an account!</a>
             </div>
             <button class="btn login-button btn-submit btn-small" type="submit" tabindex="0">
                 Sign In

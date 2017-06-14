@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -30,8 +29,8 @@ public class Register extends  HttpServlet {
         String day = request.getParameter("day");
         String month = request.getParameter("month");
         String year = request.getParameter("year");
-        String email = request.getParameter("phone");
-        String phone = request.getParameter("email");
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
         String password = request.getParameter("password");
 
         String dateofbirth = day+"-"+month+"-"+year;
@@ -41,8 +40,15 @@ public class Register extends  HttpServlet {
 
         try {
             Persons entry = new Persons(firstname, lastname, gender, dateofbirth, phone, email, password);
-            PersonsRepository.insert(entry);
-            print.println("<b>Inserted new journal entry" + entry + "</b>");
+            List<Persons> personEntries = PersonsRepository.read();
+            if (PersonsRepository.findDuplicatedEmail(personEntries,email)){
+                request.setAttribute("message", "Email address already in use!");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/register.jsp");
+                dispatcher.forward(request, resp);
+            } else {
+                PersonsRepository.insert(entry);
+                print.println("<b>Inserted new journal entry" + entry + "</b>");
+            }
         } catch (ClassNotFoundException e) {
             print.println("<div class='error'><b>Unable initialize database connection<b></div>");
         } catch (SQLException e) {

@@ -15,8 +15,7 @@ public class Persons {
         private long id;
 
 
-
-        //CONSTRUCTOR
+    //CONSTRUCTOR
         public Persons(String firstName, String lastName, String gender, String datan, String phone, String email, String password){
             this.firstName=firstName;
             this.lastName=lastName;
@@ -67,6 +66,9 @@ public class Persons {
         public String getPassword(){
             return this.password;
         }
+        public String getUser() {
+            return this.firstName + " " + this.lastName + " Email: " + this.email;
+        }
 
 
 
@@ -105,6 +107,16 @@ public class Persons {
         }
 
 
+    public boolean equalsPersons(Persons p){
+
+            if (p == null) return false;
+            if (this == p) return true;
+            if ((this.email.equals(p.email))
+                    && this.password.equals(p.password)) return true;
+            return false;
     }
+
+
+}
 
 

@@ -21,6 +21,23 @@ public class PersonsList extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
+        addStyle(out);
+        String action = req.getParameter("action");
+
+        if(action == null){
+            action = "list";
+        }
+
+        if (action.equals("list")) getAllPersons(resp);
+        if (action.equals("delete")) {
+            deleteUser(req, resp);
+        }
+//        getAllPersons(resp);
+    }
+
+    private void getAllPersons(HttpServletResponse resp) throws IOException {
+        resp.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = resp.getWriter();
         out.println("<head>");
         out.println("<title> My USERS </title>");
         addStyle(out);
@@ -38,6 +55,7 @@ public class PersonsList extends HttpServlet {
             out.println("<th>Phone</th>");
             out.println("<th>Email</th>");
             out.println("<th>Password</th>");
+            out.println("<th>Delete</th>");
             out.println("</tr>");
             List<Persons> personEntries = PersonsRepository.read();
             for (Persons person : personEntries) {
@@ -50,6 +68,7 @@ public class PersonsList extends HttpServlet {
                 out.println("<td>"+person.getPhone()+"</td>");
                 out.println("<td>"+person.getEmail()+"</td>");
                 out.println("<td>"+person.getPassword()+"</td>");
+                out.println("<td>"+"<a href=\"/PersonList?action=delete&id="+person.getId()+"\">X</a>"+"</td>");
                 out.println("</tr>");
             }
             out.println("</table>");
@@ -62,11 +81,39 @@ public class PersonsList extends HttpServlet {
         out.close();
     }
 
+    private void deleteUser(HttpServletRequest request, HttpServletResponse resp) throws IOException {
+        // write results to response
+//        String action = request.getParameter("action");
+        String id = request.getParameter("id");
+        long x = Integer.parseInt(id);
+
+        resp.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = resp.getWriter();
+        addStyle(out);
+        try {
+            PersonsRepository.deleteUser(x);
+            out.println("<b>Deleted new journal entry" + id + "</b>");
+            addBackButton(out);
+        }
+        catch (SQLException e){
+            out.println("<div class='error'><b>Unable to write to database! " + e.getMessage() + "<b></div>");
+        }
+        catch (ClassNotFoundException e){
+            out.println("<div class='error'><b>Unable initialize database connection<b></div>");
+        }
+//        FoodRepository.delete(entry);
+
+        // finished writing, send to browser
+        out.close();
+    }
+
+    private void addBackButton(PrintWriter out) {
+        out.println("<br/><h2><a href='/home.html'>HOME PAGE</a></h2>");
+
+    }
+
     private void addStyle(PrintWriter out) {
         out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/ListareStyle.css\">");
-    }
-    private void addBackButton(PrintWriter out) {
-        out.println("<br/><a href='/'>Go Back</a>");
     }
 
     @Override

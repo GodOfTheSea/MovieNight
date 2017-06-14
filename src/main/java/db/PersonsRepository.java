@@ -39,6 +39,22 @@ public class PersonsRepository {
         conn.close();
     }
 
+    public static void deleteUser(long id) throws ClassNotFoundException, SQLException {
+        // 1. load the driver
+        Class.forName("org.postgresql.Driver");
+
+        // 2. obtain a connection
+        Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+
+        // 3. create a query statement
+        PreparedStatement st = conn.prepareStatement("DELETE FROM persoane WHERE id = ?");
+        st.setLong(1,id);
+        st.executeUpdate();
+        
+        st.close();
+        conn.close();
+    }
+
     public static void changePassword(String email, String pass) throws ClassNotFoundException, SQLException {
         // 1. load the driver
         Class.forName("org.postgresql.Driver");
@@ -48,9 +64,8 @@ public class PersonsRepository {
 
         // 3. create a query statement
         PreparedStatement pSt = conn.prepareStatement("UPDATE persoane SET Password = ? WHERE Email = ? ");
-        pSt.setString(2, email);
         pSt.setString(1, pass);
-
+        pSt.setString(2, email);
 
         // 4. execute a prepared statement
 //        int rowsInserted =
@@ -99,12 +114,34 @@ public class PersonsRepository {
         return PersonEntries;
     }
 
-    public static boolean findPersonByEmailAndPassword(List<Persons> personEntries, String email ,String pass) throws ClassNotFoundException, SQLException {
+    public static Persons findPersonByEmailAndPassword(List<Persons> personEntries, String email ,String pass) throws ClassNotFoundException, SQLException {
 
         for ( Persons p : personEntries){
             if (p.getEmail().trim().equals(email) && p.getPassword().trim().equals(pass)) {
-                return true;
+                return p;
             }
+        }
+        return null;
+    }
+
+    public static String verifyPerson(String email, String pass) throws ClassNotFoundException, SQLException {
+        if (email.isEmpty()){
+            return "Please enter your email!";
+        } else if (pass.isEmpty()){
+            return "Please enter your password!";
+        }
+        List<Persons> personsEntries = PersonsRepository.read();
+        if (PersonsRepository.findPersonByEmailAndPassword(personsEntries,email,pass) == null) {
+            return "Invalid user or password!";
+        }
+        return "User found";
+
+    }
+
+    public static boolean findDuplicatedEmail(List<Persons> personEntries, String email) throws ClassNotFoundException, SQLException{
+
+        for (Persons p : personEntries){
+            if (p.getEmail().trim().equals(email)) return true;
         }
         return false;
     }

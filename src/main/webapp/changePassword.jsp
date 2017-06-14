@@ -25,21 +25,26 @@
             <div class="password-wrapper">
                 <label class="ui-label ui-input-label hybrid-password login-input login-input-password">
                     <span class="ui-label-text">Enter your new password:</span>
-                    <input type="password" class="ui-text-input" name="password" tabindex="0" value>
+                    <input type="password" class="ui-text-input" name="newPassword" tabindex="0" value>
                 </label>
                 <input type="button" class="show-toggle no-toggle" value>
             </div>
             <div class="password-wrapper">
                 <label class="ui-label ui-input-label hybrid-password login-input login-input-password">
                     <span class="ui-label-text">Confirm your new password:</span>
-                    <input type="password" class="ui-text-input" name="password" tabindex="0" value>
+                    <input type="password" class="ui-text-input" name="repeatNewPassword" tabindex="0" value>
                 </label>
                 <input type="button" class="show-toggle no-toggle" value>
             </div>
-
+            <div style="color: #dddddd">
+            <%  String message =  String.valueOf(request.getAttribute("message"));
+                if (message.equals("null")) message = "";
+            %>
+            <%=message%>
+            </div>
             <!--<div class="login-forgot-password-wrapper">-->
                 <!--<a href="" class="login-help-link" tabindex="3">Forgot your email or password?</a>-->
-                <!--<a href="register.html" class="login-help-link mesaj-left"> Create an account!</a>-->
+                <!--<a href="register.jsp" class="login-help-link mesaj-left"> Create an account!</a>-->
             <!--</div>-->
             <button class="btn login-button btn-submit btn-small" type="submit" tabindex="0">
                 Save
