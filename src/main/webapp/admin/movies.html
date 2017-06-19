@@ -1,0 +1,65 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+
+
+<body>
+<h2>My movies Database!</h2>
+
+<form action="/MoviesList" method="post">
+    <!--//        String type, String name, String genre, String ldate, String wdate, String duration, String storyline,-->
+    <!--//                String actors, String producers, int seasons, int episodes, int reviews, int favorite-->
+
+    <!--Action, Adventure, Animation, Biography, Comedy, Crime, Documentary, Drama, Family, Fantasy, History,-->
+    <!--Horror, Musical, Mystery, Romance, Sci-Fi, Sport, Thriller, War, Western-->
+    Type:<select name="type">
+    <option value="Movie">Movie</option>
+    <option value="Series">Series</option>
+</select><br />
+
+    Name:<input type="text" name="name" placeholder="Comma separated food intake."/><br />
+
+    Genre:<select name="genre">
+    <option value="Action">Action</option>
+    <option value="Adventure">Adventure</option>
+    <option value="Animation">Animation</option>
+    <option value="Biography">Biography</option>
+    <option value="Comedy">Comedy</option>
+    <option value="Crime">Crime</option>
+    <option value="Documentary">Documentary</option>
+    <option value="Drama">Drama</option>
+    <option value="Family">Family</option>
+    <option value="Fantasy">Fantasy</option>
+    <option value="History">History</option>
+    <option value="Horror">Horror</option>
+    <option value="Musical">Musical</option>
+    <option value="Mystery">Mystery</option>
+    <option value="Romance">Romance</option>
+    <option value="Sci-Fi">Sci-Fi</option>
+    <option value="Sport">Sport</option>
+    <option value="Thriller">Thriller</option>
+    <option value="War">War</option>
+    <option value="Western">Western</option>
+</select><br />
+
+    LDate:<input type="text" name="ldate" placeholder="Comma separated food intake."/><br />
+    WDate:<input type="text" name="wdate" placeholder="Comma separated food intake."/><br />
+    Duration:<input type="text" name="duration" placeholder="Comma separated food intake."/><br />
+    Storyline:<input type="text" name="storyline" placeholder="Comma separated food intake."/><br />
+    Stars:<input type="text" name="actors" placeholder="Comma separated food intake."/><br />
+    Director:<input type="text" name="producers" placeholder="Comma separated food intake."/><br />
+    Seasons:<input type="text" name="seasons" placeholder="Comma separated food intake."/><br />
+    Episodes:<input type="text" name="episodes" placeholder="Comma separated food intake."/><br />
+    Note:<input type="text" name="reviews" placeholder="Comma separated food intake."/><br />
+    Favorite:<input type="text" name="favorite" placeholder="Comma separated food intake."/><br />
+
+    <input type="submit" value="Submit"/>&nbsp;
+
+</form>
+
+<form action="/MoviesList" method="get">
+    <input type="submit" value="Get All Movies"/>
+</form>
+</body>
+</html>

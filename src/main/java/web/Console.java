@@ -34,7 +34,7 @@ public class Console extends HttpServlet {
         int seasons = request.getIntHeader("seasons");
         int episodes = request.getIntHeader("episodes");
         int note = request.getIntHeader("note");
-        int favorit = request.getIntHeader("favorit");
+        boolean favorit = Boolean.valueOf(request.getParameter("favorit"));
 
 
 

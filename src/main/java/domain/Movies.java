@@ -10,16 +10,17 @@ public class Movies {
     private String Wdate;
     private String Duration;
     private String Storyline;
-    private String Stars;
-    private String Director;
+    private String Actors;
+    private String Producers;
     private int Seasons;
     private int Episodes;
-    private int Note;
-    private int Favorite;
+    private int Reviews;
+    private boolean Favorite;
     private long id;
 
     //CONSTRUCTOR
-    public Movies(String type, String name, String genre, String ldate, String wdate, String duration, String storyline, String stars, String director, int seasons, int episodes, int note, int favorite){
+    public Movies(String type, String name, String genre, String ldate, String wdate, String duration,
+                  String storyline, String actors, String producers, int seasons, int episodes, int reviews, boolean favorite){
         this.Type=type;
         this.Name=name;
         this.Genre=genre;
@@ -27,11 +28,11 @@ public class Movies {
         this.Wdate=wdate;
         this.Duration=duration;
         this.Storyline=storyline;
-        this.Stars=stars;
-        this.Director=director;
+        this.Actors = actors;
+        this.Producers = producers;
         this.Seasons=seasons;
         this.Episodes=episodes;
-        this.Note=note;
+        this.Reviews = reviews;
         this.Favorite = favorite;
     }
 
@@ -86,18 +87,18 @@ public class Movies {
         this.Storyline=storyline;
     }
 
-    public String getStars(){
-        return this.Stars;
+    public String getActors(){
+        return this.Actors;
     }
-    public void setStars(String stars){
-        this.Stars=stars;
+    public void setActors(String actors){
+        this.Actors = actors;
     }
 
-    public String getDirector(){
-        return this.Director;
+    public String getProducers(){
+        return this.Producers;
     }
-    public void setDirector(String director){
-        this.Director=director;
+    public void setProducers(String producers){
+        this.Producers = producers;
     }
 
     public int getSeasons(){
@@ -114,17 +115,17 @@ public class Movies {
         this.Episodes=episodes;
     }
 
-    public int getNote(){
-        return this.Note;
+    public int getReviews(){
+        return this.Reviews;
     }
-    public void setNote (int note){
-        this.Note=note;
+    public void setReviews(int reviews){
+        this.Reviews = reviews;
     }
 
-    public int getFavorite(){
+    public boolean getFavorite(){
         return this.Favorite;
     }
-    public void setFavorite(int favorite){
+    public void setFavorite(boolean favorite){
         this.Favorite = favorite;
     }
 
@@ -137,7 +138,7 @@ public class Movies {
 
     @Override
     public String toString(){
-        return Type + Name + Genre + Ldate + Wdate + Duration + Storyline + Stars + Director + Seasons + Episodes + Note + Favorite;
+        return Type + Name + Genre + Ldate + Wdate + Duration + Storyline + Actors + Producers + Seasons + Episodes + Reviews + Favorite;
     }
 }
 

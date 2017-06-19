@@ -1,4 +1,4 @@
-package web;
+package web.admin;
 
 
 import db.PersonsRepository;

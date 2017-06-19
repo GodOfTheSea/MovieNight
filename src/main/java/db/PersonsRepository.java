@@ -19,7 +19,7 @@ public class PersonsRepository {
         Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
         // 3. create a query statement
-        PreparedStatement pSt = conn.prepareStatement("INSERT INTO persoane( FirstName, LastName, Gender, DateofBirth, Phone, Email, Password) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        PreparedStatement pSt = conn.prepareStatement("INSERT INTO persons( FirstName, LastName, Gender, DateofBirth, Phone, Email, Password) VALUES (?, ?, ?, ?, ?, ?, ?)");
         pSt.setString(1, entry.getFirstName());
         pSt.setString(2, entry.getLastName());
         pSt.setString(3, entry.getGender());
@@ -47,15 +47,15 @@ public class PersonsRepository {
         Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
         // 3. create a query statement
-        PreparedStatement st = conn.prepareStatement("DELETE FROM persoane WHERE id = ?");
+        PreparedStatement st = conn.prepareStatement("DELETE FROM persons WHERE id = ?");
         st.setLong(1,id);
         st.executeUpdate();
-        
+
         st.close();
         conn.close();
     }
 
-    public static void changePassword(String email, String pass) throws ClassNotFoundException, SQLException {
+    public static void changePassword(Long id, String pass) throws ClassNotFoundException, SQLException {
         // 1. load the driver
         Class.forName("org.postgresql.Driver");
 
@@ -63,9 +63,9 @@ public class PersonsRepository {
         Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
         // 3. create a query statement
-        PreparedStatement pSt = conn.prepareStatement("UPDATE persoane SET Password = ? WHERE Email = ? ");
+        PreparedStatement pSt = conn.prepareStatement("UPDATE persons SET Password = ? WHERE id = ? ");
         pSt.setString(1, pass);
-        pSt.setString(2, email);
+        pSt.setLong(2, id);
 
         // 4. execute a prepared statement
 //        int rowsInserted =
@@ -88,7 +88,7 @@ public class PersonsRepository {
         Statement st = conn.createStatement();
 
         // 4. execute a query
-        ResultSet rs = st.executeQuery("SELECT id,FirstName, LastName, Gender, DateOfBirth, Phone, Email, Password FROM persoane");
+        ResultSet rs = st.executeQuery("SELECT id,FirstName, LastName, Gender, DateOfBirth, Phone, Email, Password FROM persons");
 
 
         // 5. iterate the result set and print the values

@@ -50,22 +50,27 @@ public class ChangePassword extends HttpServlet {
             dispatcher.forward(request, resp);
         }
 
-        if (newPass.trim().equals(repeatNewPass.trim())) {
+        if (newPass.trim().equals(repeatNewPass.trim()) && !newPass.trim().equals("")) {
             try {
                 List<Persons> personsEntries = PersonsRepository.read();
                 if (p.equalsPersons((PersonsRepository.findPersonByEmailAndPassword(personsEntries, p.getEmail().trim(), p.getPassword().trim())))) {
-                    PersonsRepository.changePassword(p.getEmail(),newPass);
+                    PersonsRepository.changePassword(p.getId(),newPass);
                     Persons pers = PersonsRepository.findPersonByEmailAndPassword(PersonsRepository.read(),p.getEmail(),newPass);
                     session.setAttribute("name",pers); // Reset the session to the same USER with the new PASS
                     request.setAttribute("message", "Your password has been successfully changed.");
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/changePassword.jsp");
                     dispatcher.forward(request, resp);
+                    Thread.sleep(600);
+                    resp.sendRedirect("home.html");
                 } else {
                     request.setAttribute("message", "You are not registered on our site!");
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/changePassword.jsp");
                     dispatcher.forward(request, resp);
                 }
-            } catch (ClassNotFoundException e) {
+            } catch (InterruptedException e){
+                System.out.println(e.getMessage());
+            }
+            catch (ClassNotFoundException e) {
                 print.println("<div class='error'><b>Unable initialize database connection<b></div>");
             } catch (SQLException e) {
                 print.println("<div class='error'><b>Unable to write to database! " + e.getMessage() + "<b></div>");

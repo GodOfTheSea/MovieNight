@@ -25,7 +25,7 @@ public class Home extends HttpServlet{
                 "</head>");
 
         out.print("<body>\n" +
-                "<a href=\"listareTest.html\" type=\"link\" class=\"mesaj welcome\" > ENTER </a>\n" +
+                "<a href=\"persons.html\" type=\"link\" class=\"mesaj welcome\" > ENTER </a>\n" +
                 "\n" +
                 "<a href=\"changePassword.jsp\" type=\"link\" class=\"mesaj welcome\" > Change Password </a>\n" +
                 "\n" +

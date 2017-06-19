@@ -26,5 +26,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: postgresql:postgresql:9.1-901.jdbc4" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.42-bin" level="project" />
   </component>
 </module>
