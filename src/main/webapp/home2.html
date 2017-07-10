@@ -12,10 +12,21 @@
 <body>
 <header>
     <div class="header-container">
-        <a href="#">
-            <img src="images/account-icon-2.jpg" class="user-icon user-icon-position">
-            <span></span>
-        </a>
+        <nav id="user_nav">
+            <ul class="clearfix">
+                <li id="user_list">
+                    <a id="user_link" href="#">
+                        <img src="images/account-icon-2.jpg" class="user-icon user-icon-position">
+                        <span></span>
+                    </a>
+                    <ul id="user_changes">
+                        <li><a href="profile.html">Profile Settings</a></li>
+                        <li><a href="index.html">Sign out</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
         <form id="header-form" class="search-form">
                 <!--<label class="ui-label-text">Search</label>-->
             <div>
@@ -25,9 +36,6 @@
                 </button>
             </div>
         </form>
-        <!--<a href="home.html">-->
-            <!--<img src="images/ClaireUnderwood.jpg" class="home_page_icon icon-position">-->
-        <!--</a>-->
         <a href="home.html">
                 <p class="title-paragraph title-position-relative title-position">t</p>
                 <p class="title-paragraph title-position-relative H">h</p>
@@ -40,14 +48,98 @@
                 <p class="title-paragraph title-position-relative">v</p>
                 <p class="title-paragraph title-position-relative G">o</p>
                 <p class="title-paragraph title-position-relative">m</p>
+        </a>
+
+        <nav>
+            <ul class="clearfix">
+                <li id="first_list">
+                    <a id="menu-list" href="#"> <!-- data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" -->
+                        <img src="images/menu-icon-3.png" class="menu-icon menu-icon-position">
+                        <span class="darrow">&#9660</span>
+                        <!--<span class="caret"></span>-->
+                    </a>
+                    <ul>
+                        <!--<li class="dropdown-list divider-top"></li>-->
+                        <!--<li class="dropdown-list divider-top-2"></li>-->
+                        <!--<li class="dropdown-list divider-top-3"></li>-->
+                        <li id="second-list"><a href="#" id="genre_list">Sort by Type</a>
+                            <span class="rarrow">&#9654</span>
+                            <ul>
+                                <li><a href="#">Comedy</a></li>
+                                <li><a href="#">Comedy2</a></li>
+                                <li><a href="#">Comedy3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Sort by Genre</a></li>
+                        <li><a href="#">Sort by Actor</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
 
 
-        </a>
-        <a href="#">
-            <img src="images/menu-icon-3.png" class="menu-icon menu-icon-position">
-        </a>
     </div>
 </header>
+
+<!--<ul id="navmenu">-->
+    <!--<li>-->
+        <!--<a href="#"> &lt;!&ndash; data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" &ndash;&gt;-->
+            <!--&lt;!&ndash;<img src="images/menu-icon-3.png" class="menu-icon menu-icon-position">&ndash;&gt;-->
+            <!--<span class="caret"></span>-->
+            <!--hiperlink1-->
+
+        <!--</a>-->
+        <!--<ul class="sub_menu_1">-->
+            <!--&lt;!&ndash;<li class="dropdown-list divider-top"></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li class="dropdown-list divider-top-2"></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li class="dropdown-list divider-top-3"></li>&ndash;&gt;-->
+
+            <!--<li>-->
+                <!--<a href="#">Sort by Gendre</a>-->
+                <!--<ul class="sub_menu_2">-->
+                    <!--<li><a href="#">Comedy</a></li>-->
+                    <!--<li><a href="#">Comedy2</a></li>-->
+                    <!--<li><a href="#">Comedy3</a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li><a href="#">Sort by Producer</a></li>-->
+            <!--<li ><a href="#">Sort by Actor</a></li>-->
+
+
+        <!--</ul>-->
+    <!--</li>-->
+<!--</ul>-->
+
+
+
+
+
+
+
+
+
+
+
+<!--<div id="body-page">-->
+    <!--<div id="bp-first-element">-->
+        <!--<iframe width="233" height="200" src="https://www.youtube.com/embed/JqchaXXunGA" frameborder="0" allowfullscreen></iframe>-->
+        <!--<span></span>-->
+    <!--</div>-->
+    <!--<div id="bp-second-element"><iframe width="233" height="200" src="https://www.youtube.com/embed/WRtDFiTNLaY" frameborder="0" allowfullscreen></iframe></div>-->
+    <!--<div id="bp-third-element"><iframe width="233" height="200" src="https://www.youtube.com/embed/1Mlhnt0jMlg" frameborder="0" allowfullscreen></iframe></div>-->
+    <!--<div id="bp-fourth-element"><iframe width="233" height="200" src="https://www.youtube.com/embed/oltCLzdHLQo" frameborder="0" allowfullscreen></iframe></div>-->
+    <!--<div id="bp-fifth-element"><iframe width="233" height="200" src="https://www.youtube.com/embed/BpyVaZjg8yY" frameborder="0" allowfullscreen></iframe></div>-->
+<!--</div>-->
+
+<!--<div id="body-page-2">-->
+
+<!--</div>-->
+
+<!--<div id="body-page-3">-->
+
+<!--</div>-->
+
+
 
 
 

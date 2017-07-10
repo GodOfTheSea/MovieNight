@@ -1,0 +1,63 @@
+nav {
+    background: red;
+}
+
+nav ul {
+    background: #777777;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li {
+    background: whitesmoke;
+    list-style: none;
+}
+
+nav ul li a {
+    display: inline-block;
+    width: 100px;
+    color: gold;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+nav > ul > li {
+    float: left;
+}
+
+.clearfix:after {
+    display: block;
+    content: " ";
+    clear: both;
+}
+
+nav ul li:hover > a {
+    background: rgba(255,0,0,0.3);
+}
+
+nav > ul ul {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+}
+
+nav  ul > li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* MOVE RIGHT */
+
+nav ul ul li {
+    position: relative;
+}
+
+nav ul ul ul {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
