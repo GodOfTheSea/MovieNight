@@ -37,10 +37,14 @@
                 <input type="button" class="show-toggle no-toggle" value>
             </div>
             <div style="color: #dddddd">
+                <%--<%@ page import="web.ChangePassword" %>--%>
             <%  String message =  String.valueOf(request.getAttribute("message"));
                 if (message.equals("null")) message = "";
             %>
             <%=message%>
+                <%--<% if (message.equals("Your password has been successfully changed.")){--%>
+                    <%--response.sendRedirect("home.html");--%>
+                <%--}%>--%>
             </div>
             <!--<div class="login-forgot-password-wrapper">-->
                 <!--<a href="" class="login-help-link" tabindex="3">Forgot your email or password?</a>-->

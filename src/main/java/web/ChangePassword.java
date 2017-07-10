@@ -58,10 +58,10 @@ public class ChangePassword extends HttpServlet {
                     Persons pers = PersonsRepository.findPersonByEmailAndPassword(PersonsRepository.read(),p.getEmail(),newPass);
                     session.setAttribute("name",pers); // Reset the session to the same USER with the new PASS
                     request.setAttribute("message", "Your password has been successfully changed.");
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("/changePassword.jsp");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
                     dispatcher.forward(request, resp);
                     Thread.sleep(600);
-                    resp.sendRedirect("home.html");
+//                    resp.sendRedirect("home.html");
                 } else {
                     request.setAttribute("message", "You are not registered on our site!");
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/changePassword.jsp");

@@ -84,6 +84,8 @@ public class MoviesList extends HttpServlet {
         }
 
         if (action.equals("list")) getAllMovies(resp);
+        if (action.equals("favorite")) getFavoritesMovies(resp);
+        if (action.equals("order")) getOrderByName(resp);
         if (action.equals("delete")) {
             deleteMovie(req, resp);
         }
@@ -119,6 +121,7 @@ public class MoviesList extends HttpServlet {
             out.println("<th>Favorite</th>");
             out.println("<th>Delete</th>");
             out.println("</tr>");
+
             List<Movies> movies = MoviesRepository.read();
             for (Movies movie : movies) {
                 out.println("<tr>");
@@ -136,6 +139,133 @@ public class MoviesList extends HttpServlet {
                 out.println("<td>"+movie.getEpisodes()+"</td>");
                 out.println("<td>"+movie.getReviews()+"</td>");
                 out.println("<td>"+movie.getFavorite()+"</td>");
+                out.println("<td>"+"<a href=\"/MoviesList?action=delete&id="+movie.getId()+"\">X</a>"+"</td>");
+                out.println("</tr>");
+            }
+            out.println("</table>");
+        } catch (ClassNotFoundException e) {
+            out.println("<div class='error'><b>Unable initialize database connection<b></div>");
+            System.out.println("Aici e problema "+ e.getMessage());
+        } catch (SQLException e) {
+            out.println("<div class='error'><b>Unable to write to database! " +  e.getMessage() +"<b></div>");
+        }
+        addBackButton(out);
+        out.close();
+    }
+
+
+    private void getOrderByName(HttpServletResponse resp) throws IOException {
+        resp.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = resp.getWriter();
+        out.println("<head>");
+        out.println("<title> My Movies Night </title>");
+        addStyle(out);
+        out.println("</head>");
+        //        String type, String name, String genre, String ldate, String wdate, String duration, String storyline,
+//                String stars, String director, int seasons, int episodes, int note, int favorite
+
+        try {
+            out.println("<h2>The Movies Database</h2>");
+            out.println("<table>");
+            out.println("<tr>");
+            out.println("<th>Id</th>");
+            out.println("<th>Type</th>");
+            out.println("<th>Name</th>");
+            out.println("<th>Genre</th>");
+            out.println("<th>LDate</th>");
+            out.println("<th>WDate</th>");
+            out.println("<th>Duration</th>");
+            out.println("<th>StoryLine</th>");
+            out.println("<th>Actors</th>");
+            out.println("<th>Producers</th>");
+            out.println("<th>Seasons</th>");
+            out.println("<th>Episodes</th>");
+            out.println("<th>Reviews</th>");
+            out.println("<th>Favorite</th>");
+            out.println("<th>Delete</th>");
+            out.println("</tr>");
+
+            List<Movies> movies = MoviesRepository.orderByName();
+            for (Movies movie : movies) {
+                out.println("<tr>");
+                out.println("<td>"+movie.getId()+"</td>");
+                out.println("<td>"+movie.getType()+"</td>");
+                out.println("<td>"+movie.getName()+"</td>");
+                out.println("<td>"+movie.getGenre()+"</td>");
+                out.println("<td>"+movie.getLdate()+"</td>");
+                out.println("<td>"+movie.getWdate()+"</td>");
+                out.println("<td>"+movie.getDuration()+"</td>");
+                out.println("<td>"+movie.getStoryline()+"</td>");
+                out.println("<td>"+movie.getActors()+"</td>");
+                out.println("<td>"+movie.getProducers()+"</td>");
+                out.println("<td>"+movie.getSeasons()+"</td>");
+                out.println("<td>"+movie.getEpisodes()+"</td>");
+                out.println("<td>"+movie.getReviews()+"</td>");
+                out.println("<td>"+movie.getFavorite()+"</td>");
+                out.println("<td>"+"<a href=\"/MoviesList?action=delete&id="+movie.getId()+"\">X</a>"+"</td>");
+                out.println("</tr>");
+            }
+            out.println("</table>");
+        } catch (ClassNotFoundException e) {
+            out.println("<div class='error'><b>Unable initialize database connection<b></div>");
+            System.out.println("Aici e problema "+ e.getMessage());
+        } catch (SQLException e) {
+            out.println("<div class='error'><b>Unable to write to database! " +  e.getMessage() +"<b></div>");
+        }
+        addBackButton(out);
+        out.close();
+    }
+
+
+
+    private void getFavoritesMovies(HttpServletResponse resp) throws IOException {
+        resp.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = resp.getWriter();
+        out.println("<head>");
+        out.println("<title> My Movies Night </title>");
+        addStyle(out);
+        out.println("</head>");
+        //        String type, String name, String genre, String ldate, String wdate, String duration, String storyline,
+//                String stars, String director, int seasons, int episodes, int note, int favorite
+
+        try {
+            out.println("<h2>The Movies Database</h2>");
+            out.println("<table>");
+            out.println("<tr>");
+            out.println("<th>Id</th>");
+            out.println("<th>Type</th>");
+            out.println("<th>Name</th>");
+            out.println("<th>Genre</th>");
+            out.println("<th>LDate</th>");
+            out.println("<th>WDate</th>");
+            out.println("<th>Duration</th>");
+            out.println("<th>StoryLine</th>");
+            out.println("<th>Actors</th>");
+            out.println("<th>Producers</th>");
+            out.println("<th>Seasons</th>");
+            out.println("<th>Episodes</th>");
+            out.println("<th>Reviews</th>");
+            out.println("<th>Favorite</th>");
+            out.println("<th>Delete</th>");
+            out.println("</tr>");
+
+            List<Movies> movies = MoviesRepository.sortByFavorites();
+            for (Movies movie : movies) {
+                out.println("<tr>");
+                out.println("<td>"+movie.getId()+"</td>");
+                out.println("<td>"+movie.getType()+"</td>");
+                out.println("<td>"+movie.getName()+"</td>");
+                out.println("<td>"+movie.getGenre()+"</td>");
+                out.println("<td>"+movie.getLdate()+"</td>");
+                out.println("<td>"+movie.getWdate()+"</td>");
+                out.println("<td>"+movie.getDuration()+"</td>");
+                out.println("<td>"+movie.getStoryline()+"</td>");
+                out.println("<td>"+movie.getActors()+"</td>");
+                out.println("<td>"+movie.getProducers()+"</td>");
+                out.println("<td>"+movie.getSeasons()+"</td>");
+                out.println("<td>"+movie.getEpisodes()+"</td>");
+                out.println("<td>"+movie.getReviews()+"</td>");
+//                out.println("<td>"+movie.getFavorite()+"</td>");
                 out.println("<td>"+"<a href=\"/MoviesList?action=delete&id="+movie.getId()+"\">X</a>"+"</td>");
                 out.println("</tr>");
             }

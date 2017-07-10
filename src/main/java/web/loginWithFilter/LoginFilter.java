@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-//@WebFilter("/Home")
+@WebFilter("/Home")
 public class LoginFilter implements Filter{
     private FilterConfig filterConfig;
     @Override

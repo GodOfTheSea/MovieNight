@@ -32,7 +32,7 @@ public class Login extends HttpServlet {
             Persons p = PersonsRepository.findPersonByEmailAndPassword(PersonsRepository.read(),email,pass);
             HttpSession session=request.getSession();
             session.setAttribute("name",p);
-            resp.sendRedirect("home.html");
+            resp.sendRedirect("home2.html");
             System.out.println("Online is: " + p.toString());
 
         } catch (ClassNotFoundException e) {

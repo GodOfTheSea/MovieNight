@@ -97,4 +97,100 @@ public class MoviesRepository {
         st.close();
         conn.close();
     }
+
+    public static List<Movies> sortByFavorites() throws ClassNotFoundException, SQLException {
+        // 1. load the driver
+        Class.forName("org.postgresql.Driver");
+
+        // 2. obtain a connection
+        Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+
+        // 3. create a query statement
+        Statement st = conn.createStatement();
+
+        // 4. execute a query
+        ResultSet resultSet = st.executeQuery("SELECT id, Type, Name, Genre, Date, Wdate, Duration, StoryLine, Actors, Producers, Seasons, Episodes, Reviews, Favorite FROM Movies WHERE favorite = TRUE ");
+
+        // 5. iterate the result set and print the values
+        List<Movies> journalEntries = new ArrayList<>();
+        while (resultSet.next()) {
+            Movies journalEntry = new Movies(
+                    resultSet.getString("Type"),
+                    resultSet.getString("Name"),
+                    resultSet.getString("Genre"),
+                    resultSet.getString("Date"),
+                    resultSet.getString("Wdate"),
+                    resultSet.getString("Duration"),
+                    resultSet.getString("StoryLine"),
+                    resultSet.getString("Actors"),
+                    resultSet.getString("Producers"),
+                    resultSet.getInt("Seasons"),
+                    resultSet.getInt("Episodes"),
+                    resultSet.getInt("Reviews"),
+                    resultSet.getBoolean("Favorite")
+            );
+            journalEntry.setId(resultSet.getLong("id"));
+            journalEntries.add(journalEntry);
+        }
+
+        // 6. close the objects
+        resultSet.close();
+        st.close();
+        conn.close();
+        return journalEntries;
+    }
+
+
+
+
+
+    public static List<Movies> orderByName() throws ClassNotFoundException, SQLException {
+        // 1. load the driver
+        Class.forName("org.postgresql.Driver");
+
+        // 2. obtain a connection
+        Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+
+        // 3. create a query statement
+        Statement st = conn.createStatement();
+
+        // 4. execute a query
+        ResultSet resultSet = st.executeQuery("SELECT id, Type, Name, Genre, Date, Wdate, Duration, StoryLine, Actors, Producers, Seasons, Episodes, Reviews, Favorite FROM Movies ORDER BY ASC ");
+
+        // 5. iterate the result set and print the values
+        List<Movies> journalEntries = new ArrayList<>();
+        while (resultSet.next()) {
+            Movies journalEntry = new Movies(
+                    resultSet.getString("Type"),
+                    resultSet.getString("Name"),
+                    resultSet.getString("Genre"),
+                    resultSet.getString("Date"),
+                    resultSet.getString("Wdate"),
+                    resultSet.getString("Duration"),
+                    resultSet.getString("StoryLine"),
+                    resultSet.getString("Actors"),
+                    resultSet.getString("Producers"),
+                    resultSet.getInt("Seasons"),
+                    resultSet.getInt("Episodes"),
+                    resultSet.getInt("Reviews"),
+                    resultSet.getBoolean("Favorite")
+            );
+            journalEntry.setId(resultSet.getLong("id"));
+            journalEntries.add(journalEntry);
+        }
+
+        // 6. close the objects
+        resultSet.close();
+        st.close();
+        conn.close();
+        return journalEntries;
+    }
+
+
+
+
+
+
+
+
 }
